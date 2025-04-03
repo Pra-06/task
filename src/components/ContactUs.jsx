@@ -14,7 +14,9 @@ export default function ContactUs() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href = "/about"; // Redirect to About page
+    alert(
+      `Form submitted successfully!\nName: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`
+    );
   };
 
   return (
@@ -56,6 +58,7 @@ export default function ContactUs() {
               value={formData.name} 
               onChange={handleChange} 
               placeholder="Enter your name" 
+              required
             />
 
             <label>Email</label>
@@ -66,6 +69,7 @@ export default function ContactUs() {
               value={formData.email} 
               onChange={handleChange} 
               placeholder="Enter your email" 
+              required
             />
 
             <label>Message</label>
@@ -75,6 +79,7 @@ export default function ContactUs() {
               value={formData.message} 
               onChange={handleChange} 
               placeholder="Enter your query..."
+              required
             ></textarea>
 
             <button className="submit-button" type="submit">Submit</button>
